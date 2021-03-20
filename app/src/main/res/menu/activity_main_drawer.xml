@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_shopping_cart_black_24dp"
+            android:title="My Cart" />
+      <!--  <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/qr_code_scan"
+            android:title="Scan QR Code" />-->
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_history_black_24dp"
+            android:title="Order Management" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_cloud_download_black_24dp"
+            android:title="Download Invoice" />
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_local_offer_black_24dp"
+            android:title="My Offers" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:title="Chat with Restaurant" />
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:title="Customer Support Chat" />
+
+        <item
+            android:id="@+id/nav_game"
+            android:icon="@drawable/ic_games_black_24dp"
+            android:title="Game" />
+
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Logout" />
+
+    </group>
+
+
+
+
+
+</menu>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>-->
+
+    <color name="colorPrimary">#C4393C</color>
+    <color name="colorPrimaryDark">#e29c9d</color>
+    <color name="colorAccent">#d16163</color>
+
+    <color name="overlayBackground">#7f333639</color>
+    <color name="overlayBackgroundA">#4f0e0d0e</color>
+    <color name="overlayActionBar">#0e0d0e</color>
+
+    <color name="black">#000000</color>
+    <color name="bgRowBackground">#FA3158</color>
+    <color name="menu_background">#F5fcff</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="white_a">#f2f2f2</color>
+    <color name="white_trans">#80FFFFFF</color>
+    <color name="blue_receipt">#0000e6</color>
+    <color name="blue">#3C5A99</color>
+    <color name="search_text_secondary_inverse">#b3ffffff</color>
+    <color name="gray_color">#f8f8f8</color>
+    <color name="app_gray">#191919</color>
+    <color name="app_gray_a">#414141</color>
+    <color name="bg_gray_color">#eeeeee</color>
+    <color name="navy_blue">#1795cc</color>
+    <color name="dark_gray">#4d4d4d</color>
+    <color name="orange">#ff4000</color>
+    <color name="hash">#c0c0c0</color>
+    <color name="light_gray">#4e4e4e</color>
+    <color name="shadow_gray">#4d4d4d</color>
+    <color name="light_green">#80b000</color>
+    <color name="dark_green">#00b300</color>
+    <color name="green">#23B900</color>
+    <color name="light_blue">#1795cc</color>
+    <color name="light_orange">#ff8000</color>
+    <color name="shade_orange">#67ff8000</color>
+    <color name="light_yellow">#DBA901</color>
+    <color name="red">#FF0000</color>
+    <color name="text_color">#4d4d4d</color>
+    <color name="pink">#E22996</color>
+    <color name="hashh">#F2F2F2</color>
+    <color name="track_color">#E69500</color>
+
+    <!--DEFAULT DIALOG-->
+    <color name="dialogTxtDefaultColor">#000000</color>
+    <color name="dialogAccept">#1E88E5</color>
+    <color name="dialogBgColor">#55000000</color>
+    <color name="dark_gray_text">#494949</color>
+    <color name="bio_text">#888888</color>
+    <color name="gray">#A4A4A4</color>
+    <color name="svThumbColor">#26111111</color>
+    <color name="btnDefaultColor">#000000</color>
+    <color name="white_transparent">#00FFFFFF</color>
+    <color name="button_pressed">#ff8a00</color>
+    <color name="button_focused">#ff8a00</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="light_white">#f2f2f2</color>
+    <color name="light_gren">#00b386</color>
+
+    <color name="on_color">#48ea8b</color>
+    <color name="off_color">#ff4651</color>
+    <color name="icon_color">#FFFFFF</color>
+
+    <!--tabs colors-->
+
+    <!--<color name="tabtextcolor">#f68c1f</color>
+    <color name="tabSelectedTextColor">#1795cc</color>
+    <color name="tablayoutbackground">#ffffff</color>
+    <color name="tabindicatorcolor">#1795cc</color>-->
+
+    <color name="tabtextcolor">#cfcfcf</color>
+    <color name="tabSelectedTextColor">#ffffff</color>
+    <color name="tablayoutbackground">#f68c1f</color>
+    <color name="tabindicatorcolor">#ffffff</color>
+    <color name="black_transparent">#66000000</color>
+    <color name="transprent_black">#90000000</color>
+
+    <color name="btnSignActive">#A9d440</color>
+    <color name="teal_b">#00cccc</color>
+    <color name="teal_a">#00e6e6</color>
+    <color name="teal_c">#00b3b3</color>
+    <color name="windowBackground">#1C1C1C</color>
+    <color name="overlay">#AA1C1C1C</color>
+</resources>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kisaann.thedining">
+    <!-- <uses-permission android:name="android.permission.SEND_SMS" /> -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.android.hardware.Camera.focus" />
+
+   <!--// <uses-sdk tools:overrideLibrary="com.truecaller.android.sdk"/>-->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="whateverString">
+        <activity android:name=".FoodMenuActivity"></activity>
+        <!--<activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
+        <activity android:name="com.facebook.accountkit.ui.AccountKitEmailRedirectActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/ak_login_protocol_scheme" />
+            </intent-filter>
+        </activity>-->
+        <!--
+ <activity
+            android:name="com.facebook.accountkit.ui.AccountKitActivity"
+            android:theme="@style/AppLoginTheme"
+            tools:replace="android:theme" />
+        -->
+        <!--
+<meta-data android:name="com.facebook.accountkit.FacebookAppEventsEnabled"
+            android:value="false"/>
+        -->
+        <meta-data android:name="com.truecaller.android.sdk.PartnerKey" android:value="@string/partnerKey"/>
+        <!--<meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/FACEBOOK_APP_ID" />
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />-->
+
+        <activity android:name=".BarMenuActivity" />
+        <activity
+            android:name=".HappyHoursActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <service android:name=".Service.MyFirebaseIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Service.MyFirebaseMessaging">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".OrderDetails"
+            android:label="Order Details" />
+        <activity
+            android:name=".DownloadInvoiceActivity"
+            android:label="Download Invoice"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowComment"
+            android:label="Comments"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FeedBackActivity" />
+        <activity android:name=".MyBookingsActivity" />
+        <activity
+            android:name=".RestaurantDetailsActivity"
+            android:label="Restaurant Details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RestWelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RestaurantDiscoveryActivity" />
+        <activity
+            android:name=".FoodList"
+            android:label="Food Menu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GameActivity"
+            android:label="GameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NotificationsActivity"
+            android:label="Notifications"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OffersCouponsActivity"
+            android:label="Offers &amp; Coupons"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CheckOutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MessageChatActivity" />
+        <activity
+            android:name=".OrderStatus"
+            android:label="Orders" />
+        <activity android:name=".CartItemsActivity" />
+        <activity
+            android:name=".FoodDetails"
+            android:label="Food Details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!--
+ Add your API key here live : rzp_live_1KZ476Ef4Ppb84
+        test : rzp_test_aET8CtyriG2adJ
+        -->
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_1KZ476Ef4Ppb84" />
+
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:label="ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SignUpActivity"
+            android:label="SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ScanQRCodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="@string/permissions_loader_meta_key"
+                android:value="android.permission.CAMERA" />
+        </activity>
+        <activity
+            android:name=".SignInActivity"
+            android:label="SignInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="@string/permissions_loader_meta_key"
+                android:value="android.permission.READ_EXTERNAL_STORAGE,              android.permission.WRITE_EXTERNAL_STORAGE" />
+    </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="Menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation" />
+    </application>
+
+</manifest>

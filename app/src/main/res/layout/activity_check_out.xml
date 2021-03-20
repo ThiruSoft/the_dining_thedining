@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CheckOutActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="100dp">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:background="@android:color/transparent"/>
+
+            <RelativeLayout
+                android:id="@+id/lly_applyCoupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"
+                android:layout_margin="5dp">
+
+                <ImageView
+                    android:id="@+id/img_coupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:src="@drawable/apply_coupon" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edt_couponCode"
+                    android:layout_width="200dp"
+                    android:hint=" Apply Coupon"
+                    android:textColorHint="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:inputType="textCapCharacters"
+                    android:padding="5dp"
+                    app:met_baseColor="@color/black"
+                    app:met_floatingLabel="highlight"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/visby_round_cf_bold"
+                    app:met_primaryColor="@color/black"
+                    app:met_singleLineEllipsis="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/img_coupon"
+                    android:background="@android:color/transparent"/>
+                <TextView
+                    android:id="@+id/txt_applyCoupon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Apply"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center_vertical|end"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/holo_green_light"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/visby_round_cf_extra_bold"
+                    android:layout_toEndOf="@+id/edt_couponCode"
+                    android:textSize="16sp"/>
+
+                <ImageView
+                    android:id="@+id/img_couponCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center_vertical|end"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_cancel_gray_24dp"
+                    android:layout_gravity="end"
+                    android:contentDescription="@string/app_name" />
+
+                <LinearLayout
+                    android:id="@+id/mlly_wallet"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="0dp"
+                    android:visibility="gone"
+                    android:layout_below="@+id/edt_couponCode"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/cbk_walletBal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Material.Drawable.CheckBox"
+                        android:text=" Wallet Balance"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/holo_blue_dark"
+                        app:fontFamily="@font/visby_round_cf_bold"
+                        android:clickable="false"
+                        android:contextClickable="false"
+                        android:checked="true"
+                        app:cbd_strokeColor="@android:color/holo_blue_dark"
+                        android:fontFamily="@font/visby_round_cf_bold"
+                        app:cbd_tickColor="@android:color/white"/>
+
+                </LinearLayout>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radio_group"
+                    android:layout_below="@+id/edt_couponCode"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wallet Balance"
+                        android:id="@+id/radio_wallet"
+                        android:visibility="gone"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/visby_round_cf_bold"
+                        android:textSize="12dp" />
+                </RadioGroup>
+                <TextView
+                    android:id="@+id/txt_walletBal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/edt_couponCode"
+                    android:gravity="center_vertical|end"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/visby_round_cf_extra_bold"
+                    android:layout_toEndOf="@+id/edt_couponCode"
+                    android:textSize="16sp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginLeft="20dp">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mRdgOffers"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zomato"
+                        android:id="@+id/rbtZomato"
+                        android:visibility="visible"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/visby_round_cf_bold"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dineout"
+                        android:id="@+id/rbtDineout"
+                        android:visibility="visible"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/visby_round_cf_bold"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kings Man"
+                        android:id="@+id/rbtKingsMan"
+                        android:visibility="gone"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/visby_round_cf_bold"
+                        android:textSize="14sp" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edtOffersCommentCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Comment Coupon Code"
+                        android:text=""
+                        android:layout_weight="2"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:inputType="text"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginTop="5dp"
+                        app:met_baseColor="@color/colorPrimary"
+                        app:met_floatingLabel="highlight"
+                        app:met_primaryColor="@color/colorPrimary"
+                        app:met_singleLineEllipsis="true" />
+
+                    <TextView
+                        android:id="@+id/txt_verify"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Verify"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/visby_round_cf_extra_bold"
+                        android:layout_toEndOf="@+id/edt_couponCode"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/mlly_kingsManVerify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edt_verifyOffersNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Mobile Number"
+                        android:text=""
+                        android:layout_weight="1.5"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:inputType="phone"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="5dp"
+                        app:met_baseColor="@color/colorPrimary"
+                        app:met_floatingLabel="highlight"
+                        app:met_primaryColor="@color/colorPrimary"
+                        app:met_singleLineEllipsis="true" />
+
+                    <TextView
+                        android:id="@+id/txt_verifyOfferCoupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Verify"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:padding="5dp"
+                        android:visibility="visible"
+                        android:layout_weight="0.5"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:layout_marginTop="0dp"
+                        android:fontFamily="@font/visby_round_cf_extra_bold"
+                        android:layout_toEndOf="@+id/edt_couponCode"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edtComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Feedback"
+                android:text=""
+                android:visibility="gone"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:layout_margin="5dp"
+                android:paddingLeft="10dp"
+                android:inputType="textMultiLine"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_singleLineEllipsis="true" />
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/hash"
+                android:layout_marginBottom="0dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_a"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/txt_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="center_horizontal"
+                    android:background="@color/white_a" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/txt_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tip Waiter"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginStart="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="horizontal">
+
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/cbk_ten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Material.Drawable.CheckBox"
+                        android:text="10"
+                        android:visibility="gone"
+                        android:gravity="center_vertical"
+                        app:fontFamily="@font/visby_round_cf_bold"
+                        android:textColor="@android:color/black"
+                        app:cbd_strokeColor="@color/colorPrimary"
+                        app:cbd_tickColor="@color/colorPrimaryDark"/>
+
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/cbk_twenty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Material.Drawable.CheckBox"
+                        android:text="20"
+                        android:gravity="center_vertical"
+                        app:fontFamily="@font/visby_round_cf_bold"
+                        android:textColor="@android:color/black"
+                        app:cbd_strokeColor="@color/colorPrimary"
+                        app:cbd_tickColor="@color/colorPrimaryDark"/>
+
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/cbk_thirty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Material.Drawable.CheckBox"
+                        android:text="30"
+                        android:gravity="center_vertical"
+                        app:fontFamily="@font/visby_round_cf_bold"
+                        android:textColor="@android:color/black"
+                        app:cbd_strokeColor="@color/colorPrimary"
+                        app:cbd_tickColor="@color/colorPrimaryDark"/>
+
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/cbk_fifty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Material.Drawable.CheckBox"
+                        android:text="50"
+                        android:gravity="center_vertical"
+                        app:fontFamily="@font/visby_round_cf_bold"
+                        android:textColor="@android:color/black"
+                        app:cbd_strokeColor="@color/colorPrimary"
+                        app:cbd_tickColor="@color/colorPrimaryDark"/>
+                    <com.rey.material.widget.CheckBox
+                        android:id="@+id/cbk_hundred"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Material.Drawable.CheckBox"
+                        android:text="100"
+                        android:gravity="center_vertical"
+                        app:fontFamily="@font/visby_round_cf_bold"
+                        android:textColor="@android:color/black"
+                        app:cbd_strokeColor="@color/colorPrimary"
+                        app:cbd_tickColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tip for waiter"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    app:met_baseColor="@color/colorPrimary"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/colorPrimary"
+                    app:met_singleLineEllipsis="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Bill Details"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Items Total"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:id="@+id/txt_totalPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Packing Fee"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:id="@+id/txt_packingPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="+$1.49"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Tax"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:id="@+id/txt_taxPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="$1.00"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/hash"
+                android:visibility="gone"
+                android:layout_marginBottom="0dp"/>
+
+            <LinearLayout
+                android:id="@+id/lly_couponDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Coupon Applied"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/green"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:id="@+id/txt_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="-$10.00"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/green"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lly_walletDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:id="@+id/txt_offerType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Kings Man(20%)"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:id="@+id/txt_walletDiscount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lly_gst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="GST(5%)"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:id="@+id/txt_gstAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/lly_serviceTax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Service Charge(5%)"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:id="@+id/txt_serviceTaxAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/hash"
+                android:layout_marginBottom="0dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Payable Amount"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="start"
+                    android:gravity="end|center_vertical"/>
+                <TextView
+                    android:id="@+id/txt_payAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_gravity="end"
+                    android:gravity="end|center_vertical"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@color/white_a"
+                android:orientation="vertical"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/txt_paymentMethod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Method"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="3dp"
+                    android:gravity="start|bottom"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/white_a" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="50dp"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/mRdgPaymentType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/mRbtOnline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/holo_blue_dark"
+                            android:text="Online"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/mRbtCash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/holo_blue_dark"
+                            android:text="Cash"
+                            android:textSize="14sp" />
+
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_margin="15dp">
+
+                <RadioButton
+                    android:id="@+id/rb_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:id="@+id/img_visa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:padding="5dp"
+                    android:layout_toRightOf="@+id/rb_one"
+                    android:src="@drawable/visa"
+                    android:layout_gravity="end" />
+                <TextView
+                    android:id="@+id/txt_bankName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kotak Debit Card"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black"
+                    android:background="@drawable/textview_ripple"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/img_visa"/>
+
+                <TextView
+                    android:id="@+id/txt_CardNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4321 47XX XXXX 6688"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black"
+                    android:background="@drawable/textview_ripple"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/img_visa"
+                    android:layout_below="@+id/txt_bankName"/>
+
+
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:background="@color/hash"
+                android:layout_marginBottom="0dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_margin="15dp">
+
+                <RadioButton
+                    android:id="@+id/rb_one1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:padding="5dp" />
+
+                <ImageView
+                    android:id="@+id/img_visa1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:padding="5dp"
+                    android:layout_toRightOf="@+id/rb_one1"
+                    android:src="@drawable/mastercard"
+                    android:layout_gravity="end" />
+                <TextView
+                    android:id="@+id/txt_bankName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kotak Debit Card"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black"
+                    android:background="@drawable/textview_ripple"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/img_visa1"/>
+
+                <TextView
+                    android:id="@+id/txt_CardNo1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4321 47XX XXXX 6688"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black"
+                    android:background="@drawable/textview_ripple"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/img_visa1"
+                    android:layout_below="@+id/txt_bankName1"/>
+
+
+            </RelativeLayout>
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/white_a"
+                android:layout_marginBottom="0dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_margin="15dp">
+
+
+                <TextView
+                    android:id="@+id/txt_addCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="+ Add Card"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/textview_ripple"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textStyle="bold" />
+
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/lly_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_confirmItems"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="PAY 0"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

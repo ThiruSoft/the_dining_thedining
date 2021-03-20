@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">DineIn</string>
+
+    <string name="FACEBOOK_APP_ID">715346562301133</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">ccdbc1ed6c7dd3e632fa8888702ed4c3</string>
+    <string name="ak_login_protocol_scheme">ak715346562301133</string>
+    <string name="partnerKey">yVkpy22176f8c3ec749dbb1467fd446acfd49</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <string name="error_field_required">This field is required</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+
+    <string name="rest_details">Greetings from Hotel Sitara Grand Hyderabad \n\n
+                                Thank you for choosing us. \n\n
+                    We look forward to delighting your taste buds \n
+                        Manager</string>
+    <string name="title_activity_buttom">ButtomActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="one">1</string>
+    <!--<string name="Rs">\u20B9</string>-->
+    <string name="Rs">KD</string>
+    <string name="rs">\u20A8</string>
+
+
+    <string name="_60">60</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="new_game">new game</string>
+    <string name="space" />
+    <string name="_10">10</string>
+    <string name="_20">20</string>
+    <string name="_15">15</string>
+    <string name="_25">25</string>
+    <string name="start_new_game">Start new game?</string>
+    <string name="are_ypu_sure">Are you sure? This action will delete your current progress</string>
+    <string name="are_you_sure_again">Oops, you ran out ot time. You have 60 seconds to unlock the exclusive discount coupon. </string>
+    <string name="win_sure">You won a discount coupon on next order use</string>
+    <string name="try_again">Try Again</string>
+    <string name="congrats">Congratulations!!!</string>
+    <string name="finished">finished !!!</string>
+    <string name="time_over">Time Over !</string>
+    <string name="preferences">Preferences</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="activate_help">Help in solving</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

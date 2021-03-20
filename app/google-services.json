@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "248003873622",
+    "firebase_url": "https://thediningapp-a976c.firebaseio.com",
+    "project_id": "thediningapp-a976c",
+    "storage_bucket": "thediningapp-a976c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248003873622:android:55d2fea0d1b437d6",
+        "android_client_info": {
+          "package_name": "com.kisaann.thedining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "248003873622-fceihc2n3ohufr136othfo3b5lg48iqc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kisaann.thedining",
+            "certificate_hash": "ce91074134b38bee0a99cdd17db4dcd55104355b"
+          }
+        },
+        {
+          "client_id": "248003873622-sg4nv78mvrpsdkl65bhpgb3piamra01o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUProGKw8vB6l_k1Lpogl3NMYn4h7QF-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "248003873622-sg4nv78mvrpsdkl65bhpgb3piamra01o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

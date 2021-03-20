@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:elevation="4dp">
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|start"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:background="@android:color/holo_red_light"
+        android:fontFamily="@font/visby_round_cf_bold"
+        android:text=""/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/txt_restName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:fontFamily="@font/visby_round_cf_bold"
+                android:text="Restaurant : "/>
+            <TextView
+                android:id="@+id/restName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textColor="@android:color/holo_green_dark"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:layout_toEndOf="@+id/txt_restName"
+                android:text="123456 "/>
+
+            <TextView
+                android:id="@+id/txt_order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:layout_below="@+id/txt_restName"
+                android:fontFamily="@font/visby_round_cf_bold"
+                android:text="Order Id : "/>
+            <TextView
+                android:id="@+id/order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:layout_below="@+id/txt_restName"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:layout_toEndOf="@+id/txt_order_id"
+                android:text="123456 "/>
+
+            <TextView
+                android:id="@+id/txt_order_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:fontFamily="@font/visby_round_cf_bold"
+                android:layout_below="@+id/txt_order_id"
+                android:text="Date &amp; Time : "/>
+            <TextView
+                android:id="@+id/order_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:layout_toEndOf="@+id/txt_order_date"
+                android:layout_below="@+id/txt_order_id"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:textStyle="normal"
+                android:text="123456 "/>
+
+            <TextView
+                android:id="@+id/txt_order_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:fontFamily="@font/visby_round_cf_bold"
+                android:layout_below="@+id/txt_order_date"
+                android:text="Order Status : "/>
+            <TextView
+                android:id="@+id/order_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:layout_below="@+id/txt_order_date"
+                android:layout_toEndOf="@+id/txt_order_status"
+                android:textAllCaps="true"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:textStyle="bold"
+                android:text="status "/>
+
+            <TextView
+                android:id="@+id/txt_order_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="false"
+                android:fontFamily="@font/visby_round_cf_bold"
+                android:textStyle="bold"
+                android:layout_below="@+id/txt_order_status"
+                android:text="Table No : "/>
+
+            <TextView
+                android:id="@+id/order_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_below="@+id/txt_order_status"
+                android:layout_toEndOf="@+id/txt_order_phone"
+                android:textAllCaps="true"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:textStyle="italic|bold"
+                android:text="01 "/>
+            <TextView
+                android:id="@+id/txt_order_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:fontFamily="@font/visby_round_cf_bold"
+                android:layout_below="@+id/txt_order_phone"
+                android:text="Payment Status : "/>
+
+            <TextView
+                android:id="@+id/order_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:layout_below="@+id/txt_order_phone"
+                android:layout_toEndOf="@+id/txt_order_address"
+                android:textAllCaps="false"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:textStyle="italic|bold"
+                android:text="address "/>
+
+            <TextView
+                android:id="@+id/order_confirmOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_below="@+id/txt_order_address"
+                android:textAllCaps="false"
+                android:visibility="gone"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/white"
+                android:background="@android:color/holo_orange_light"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:textStyle="italic|bold"
+                android:text="Verify And Confirm Payment "/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="8dp"
+            app:srcCompat="@drawable/ic_delete_forever_black_24dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

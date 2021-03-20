@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/mlly_items"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:layout_height="110dp"
+    android:orientation="horizontal">
+    <com.kisaann.thedining.Helpers.RoundRectCornerImageView
+        android:id="@+id/img_itemImage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/food_image"
+        android:background="@drawable/fab_rounded_square_bg"
+        android:scaleType="fitXY"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="0dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_itemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grilled Chicken"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/visby_round_cf_demi_bold"/>
+
+
+
+        <TextView
+            android:id="@+id/txt_itemDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delicious juicy sub containing spicy paneer tikka with lip-smacking tomato marinara sauce and mozzarella cheese."
+            android:textColor="@color/app_gray"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:maxLines="2"
+            android:layout_below="@+id/txt_itemName"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/visby_round_cf_regular"
+            android:layout_marginRight="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/rly_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txt_itemDescription">
+
+            <TextView
+                android:id="@+id/txt_itemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Rs"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/txt_itemOriginalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Rs"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/txt_itemPrice"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@android:color/darker_gray"
+                android:background="@drawable/line"/>
+
+            <TextView
+                android:id="@+id/txt_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/txt_itemPrice"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:drawableLeft="@drawable/ic_discount"
+                android:text=" 0% off"/>
+            <TextView
+                android:id="@+id/txt_outOfStack"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="Out Of Stock"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical|end"
+                android:textColor="@color/colorPrimary" />
+
+            <LinearLayout
+                android:id="@+id/mLlyCartCount"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                android:weightSum="3"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical|end"
+                android:background="@drawable/cart_background">
+
+                <Button
+                    android:id="@+id/btnDecreaseCart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@android:color/transparent"
+                    android:text="@string/minus"
+                    android:layout_weight="1"
+                    android:textColor="@color/bio_text"
+                    android:textSize="@dimen/large_text_size"/>
+
+                <TextView
+                    android:id="@+id/txtQuantityCart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/one"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/normal_text_size"
+                    android:textStyle="normal"/>
+
+                <Button
+                    android:id="@+id/btnIncreaseCart"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:text="@string/plus"
+                    android:layout_weight="1"
+                    android:textColor="@color/dark_green"
+                    android:layout_marginRight="5dp"
+                    android:textSize="@dimen/large_text_size"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_addToCart"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:text="ADD"
+                android:textColor="@color/light_gray"
+                android:textSize="14sp"
+                android:layout_margin="5dp"
+                android:textAllCaps="false"
+                android:drawableEnd="@drawable/ic_add_red_24dp"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                android:paddingEnd="20dp"
+                android:fontFamily="@font/visby_round_cf_regular"
+                android:background="@drawable/cart_background"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/txt_customize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Customizable"
+            android:textSize="10sp"
+            android:visibility="gone"
+            android:gravity="center_vertical|end"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="15dp"
+            android:layout_below="@+id/rly_details"
+            android:layout_gravity="center_vertical|end"/>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/txt_customize"
+            android:background="@color/hash"
+            android:visibility="gone"
+            android:layout_marginBottom="0dp"/>
+
+
+    </RelativeLayout>
+</LinearLayout>

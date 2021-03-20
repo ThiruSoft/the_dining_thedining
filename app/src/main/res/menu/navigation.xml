@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_local_offer_black_24dp"
+        android:title="Happy Hours" />
+
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_local_bar_white_24dp"
+        android:title="Drinks" />
+
+<!--    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_restaurant_white_24dp"
+        android:title="Food Menu" />-->
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_search_white_24dp"
+        android:title="Search" />
+
+    <!--<item
+        android:id="@+id/navigation_checkout"
+        android:icon="@drawable/ic_account_balance_wallet_white_24dp"
+        android:title="Checkout" />-->
+
+
+</menu>

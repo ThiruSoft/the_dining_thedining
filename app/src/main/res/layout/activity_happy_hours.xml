@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HappyHoursActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_menu"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="45dp"
+        android:layout_gravity="bottom|end"
+        android:visibility="visible"
+        app:fabText="Food"
+        app:fabType="circle"
+        app:fabColor="@color/green"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="@font/visby_round_cf_demi_bold"
+        app:fabIcon="@drawable/ic_menu_list_white_24dp" />
+
+    <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_barMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="45dp"
+        android:layout_gravity="bottom"
+        android:visibility="visible"
+        app:fabText="Bar"
+        app:fabType="circle"
+        app:fabColor="@color/green"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/visby_round_cf_demi_bold"
+        app:fabIcon="@drawable/ic_menu_list_white_24dp" />
+    <LinearLayout
+        android:id="@+id/mlly_viewCart"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="0dp"
+        android:layout_marginTop="-50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/txt_cartPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|start"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|start"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|start"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/txt_viewCart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=" Place Order "
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_gravity="end|center_vertical"
+            android:drawableRight="@drawable/ic_add_shopping_cart_white_24dp"
+            android:gravity="end|center_vertical"
+            android:visibility="visible"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</RelativeLayout>

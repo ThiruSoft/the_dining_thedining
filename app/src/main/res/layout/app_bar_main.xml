@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        android:visibility="visible"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/top_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@android:color/white"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        app:itemTextColor="@android:color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/top_navigation" />
+
+    <include
+        layout="@layout/content_main" />
+
+    <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="45dp"
+        android:layout_gravity="bottom|center_horizontal"
+        app:fabText="Food"
+        app:fabType="circle"
+        android:visibility="visible"
+        app:fabColor="@color/green"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="@font/visby_round_cf_demi_bold"
+        app:fabIcon="@drawable/ic_menu_list_white_24dp" />
+
+    <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_barMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="45dp"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        app:fabText="Bar"
+        app:fabType="circle"
+        app:fabColor="@color/green"
+        android:fontFamily="@font/visby_round_cf_demi_bold"
+        app:fabIcon="@drawable/ic_menu_list_white_24dp" />
+
+
+    <!--   <android.support.design.widget.FloatingActionButton
+           android:id="@+id/fab"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="bottom|end"
+           android:layout_margin="@dimen/fab_margin"
+           android:visibility="gone"
+           app:srcCompat="@drawable/ic_shopping_cart_white_24dp" />-->
+
+    <!-- <android.support.design.widget.BottomNavigationView
+         android:id="@+id/navigation"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@color/colorPrimary"
+         app:itemIconTint="@android:color/white"
+         app:itemTextColor="@android:color/white"
+         android:layout_gravity="bottom"
+         android:visibility="gone"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintRight_toRightOf="parent"
+         app:menu="@menu/navigation" />-->
+
+    <LinearLayout
+        android:id="@+id/mlly_viewCart"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="0dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/colorPrimary"
+        android:weightSum="2"
+        android:layout_below="@+id/recycler_menu"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/txt_cartPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|start"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|start"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical|start"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/txt_viewCart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=" Place Order "
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:layout_gravity="end|center_vertical"
+            android:drawableRight="@drawable/ic_add_shopping_cart_white_24dp"
+            android:gravity="end|center_vertical"
+            android:visibility="visible"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
